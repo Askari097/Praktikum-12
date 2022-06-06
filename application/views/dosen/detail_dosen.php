@@ -32,5 +32,27 @@
             </tr>
         </tbody>
     </table>
+    <div class="col-md-5 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <div calss="d-flex flex-column align-items-center text-center">
+                    <img src="<?=base_url()?>uploads/photos/<?=$pengajar->id?>.jpg" width="300"/>
+                    <div class="mt-4">
+                        <h4><?=$pengajar->nama?></h4>
+                        <p>Foto dosen</p>
+                        <?php echo $error;?>
+                        <br/><br/>
+                        <a href="https://www.instagram.com/muh_askarii/" target="_blank"><button class="btn btn-outline-info">Instagram</button></a>
+                        <br/><br/>
+                        <?php echo form_open_multipart('dosen/upload');?>
+                        <input type="file" name="foto" size="300"/>
+                        <input type="hidden" name="iddosen" value="<?=$pengajar->id?>"/>
+                        <br><br>
+                        <input type="submit" value="upload foto" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
